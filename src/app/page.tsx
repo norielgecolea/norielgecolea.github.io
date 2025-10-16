@@ -6,8 +6,8 @@ import Typewriter from 'typewriter-effect';
 import FadeInSection from "./fadeinsection";
 import ProjectShowcase from "./projectshowcase";
 
-
-
+import Gallery from "./Gallery";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 
@@ -135,11 +135,11 @@ export default function Home() {
 
 
 
-                  
-                    <button className="bg-emerald-600 transition duration-100 ease-in-out inline-flex items-center rounded-lg hover:bg-emerald-300 hover:text-emerald-900 px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm   ">
-                      Download my Resume
-                    </button>
-                  
+
+                  <button className="bg-emerald-600 transition duration-100 ease-in-out inline-flex items-center rounded-lg hover:bg-emerald-300 hover:text-emerald-900 px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm   ">
+                    Download my Resume
+                  </button>
+
                   <button className="hover:bg-amber-50/10 duration-100 ease-in-out inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
                   >
                     Contact Me
@@ -197,7 +197,7 @@ export default function Home() {
         </div >
 
 
-        <section className=" relative w-screen px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900 rounded-3xl mt-15 gap-10 flex flex-col text-center justify-center items-center">
+        <section className=" relative w-screen px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900  mt-15 gap-10 flex flex-col text-center justify-center items-center">
           <FadeInSection>
             <h1 className="text-4xl  sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
                text-emerald-200 animate-pulse drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3">
@@ -325,7 +325,7 @@ export default function Home() {
           </FadeInSection>
         </section>
 
-        <section className="">
+        <section className="hidden">
           <div className="p-5 sm:p-8">
             <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
               <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080" />
@@ -353,8 +353,10 @@ export default function Home() {
         </section>
 
 
+        <section className="absolute w-screen px-10  pb-32 sm:px-6 backdrop-blur-md  bg-neutral-900/30 gap-10 flex flex-col text-center justify-center items-center">
+          <Gallery />
 
-
+        </section>
 
 
 

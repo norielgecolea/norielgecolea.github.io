@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+    images: {
+    domains: ["pagedone.io"], // Add any other domains you use
+  },
 };
 
 export default nextConfig;

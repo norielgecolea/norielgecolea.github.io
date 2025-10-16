@@ -18,11 +18,11 @@ interface ProjectShowcaseProps {
 }
 
 export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
-      const router = useRouter();
-    
-      const handleClick = () => {
+    const router = useRouter();
+
+    const handleClick = () => {
         router.push("/allprojects")
-      };
+    };
     const [index, setIndex] = useState(0);
 
     const next = () => setIndex((prev) => (prev + 1) % projects.length);
@@ -87,13 +87,13 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
 
                 {/* Controls */}
                 <div className="flex items-center gap-6 mt-8">
-                    <button 
+                    <button
                         onClick={prev}
                         className="px-5 py-2 bg-white/10 hover:bg-white/20 rounded-full transition"
                     >
                         ◀ Previous
                     </button>
-                    <button 
+                    <button
                         onClick={next}
                         className="px-5 py-2 bg-white/10 hover:bg-white/20 rounded-full transition"
                     >
@@ -123,7 +123,7 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
     "
                     ></span>
 
-                    <span  
+                    <span
                         className="
       relative z-10 bg-clip-text  
       bg-gradient-to-r from-white via-emerald-100 to-cyan-200

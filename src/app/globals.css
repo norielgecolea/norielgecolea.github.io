@@ -215,3 +215,47 @@ body {
   
   animation: border-spin 5s linear infinite;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* globals.css or Gallery.module.css */
+.gallery-top .swiper-slide-active {
+  transform: scale(1.1);
+}
+.gallery-top .swiper-slide .swiper-box {
+  opacity: 0;
+  transform: scale(1);
+}
+.gallery-top .swiper-slide-active .swiper-box {
+  transform: scale(0.9);
+  opacity: 1;
+}
+@media (max-width: 1920px) {
+  .gallery-top .swiper-slide-active .swiper-box {
+    opacity: 1;
+  }
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+@keyframes zoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.1); }
+}

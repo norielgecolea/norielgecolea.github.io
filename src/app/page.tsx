@@ -76,15 +76,13 @@ export default function Home() {
 
 
               <div className="order-2 lg:order-1 ">
-
-                <div className=" greetings bg-emerald-800/50 rounded-2xl px-5 py-3 inline-block">
-                  <h1 className="font-mono text-3xl text-amber-50/50 select-none">
-                    Hi I am{" "}
-                    <span className="text-amber-200 inline-block animate-wobble">✌🏻</span>
-                  </h1>
-                  <p className="text-gray-50 font-semibold font-sans text-4xl">Noriel Gecolea</p>
-
-
+                <FadeInSection>
+                  <div className=" greetings bg-emerald-800/50 rounded-2xl px-5 py-3 inline-block">
+                    <h1 className="font-mono text-3xl text-amber-50/50 select-none">
+                      Hi I am{" "}
+                      <span className="text-amber-200 inline-block animate-wobble">✌🏻</span>
+                    </h1>
+                    <p className="text-gray-50 font-semibold font-sans text-4xl">Noriel Gecolea</p>
 
 
 
@@ -94,7 +92,10 @@ export default function Home() {
 
 
 
-                </div>
+
+
+                  </div>
+                </FadeInSection>
                 <br />
                 <div className="px-5 pt-2 inline-block">
                   <h1 className="relative font-mono text-lg font-bold text-emerald-600 no-select  ">
@@ -166,17 +167,19 @@ export default function Home() {
              before:blur-[30px] lg:before:blur-[80px] before:opacity-80 before:-z-10"
                 >
                   <div className="[animation:counterRotate_6s_linear_infinite] relative z-20 rounded-full overflow-hidden">
-                    <div className="relative h-[350px] w-[350px] rounded-full overflow-hidden">
-                      <Image
-                        src="/mecartoon.png"
-                        alt=""
-                        width={350}
-                        height={350}
-                        className="no-select h-full w-full object-cover rounded-full"
-                      />
+                    <FadeInSection>
+                      <div className="relative h-[350px] w-[350px] rounded-full overflow-hidden">
+                        <Image
+                          src="/mecartoon.png"
+                          alt=""
+                          width={350}
+                          height={350}
+                          className="no-select h-full w-full object-cover rounded-full"
+                        />
 
 
-                    </div>
+                      </div>
+                    </FadeInSection>
                   </div>
                 </div>
 
@@ -197,12 +200,25 @@ export default function Home() {
         </div >
 
 
+
+
+        <section className="bg-neutral-900">
+          <FadeInSection>
+            <ProjectShowcase projects={projects} />
+          </FadeInSection>
+        </section>
+
+
         <section className=" relative w-screen px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900  mt-15 gap-10 flex flex-col text-center justify-center items-center">
           <FadeInSection>
-            <h1 className="text-4xl  sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
-               text-emerald-200 animate-pulse drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3">
+            <h1
+              className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
+  text-emerald-200 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3 animate-glow"
+            >
               Technologies
             </h1>
+
+
 
 
 
@@ -317,12 +333,6 @@ export default function Home() {
 
 
 
-        </section>
-
-        <section className="bg-neutral-900">
-          <FadeInSection>
-            <ProjectShowcase projects={projects} />
-          </FadeInSection>
         </section>
 
         <section className="hidden">

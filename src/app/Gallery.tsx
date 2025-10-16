@@ -274,7 +274,7 @@ export default function Gallery() {
             alt="background"
             fill
             sizes="100vw"
-            style={{ objectFit: "cover", filter: "blur(8px)" }}
+            style={{ objectFit: "cover", filter: "blur(10px)" }}
           />
         </div>
 
@@ -286,10 +286,13 @@ export default function Gallery() {
         {/* Content (same as before) */}
         <div className=" flex flex-col justify-center relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 items-center">
           <div className="pb-16 text-center">
-            <h2 className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em] text-emerald-200 animate-pulse drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3">
-              MY CERTIFICATES
-            </h2>
-            <p className="text-gray-600 text-lg font-normal leading-8">
+<h1
+  className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
+  text-emerald-200 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3 animate-glow"
+>
+             MY CERTIFICATES
+            </h1>
+            <p className="text-gray-200 text-base leading-relaxed">
               Explore the essence of beauty in our gallery's intimate space.
             </p>
           </div>
@@ -321,8 +324,8 @@ export default function Gallery() {
                     <Image src={item.image} alt={item.title} fill className="rounded-xl object-cover" />
                   </div>
                   <div className="mt-5 flex flex-col items-center gap-1 text-center">
-                    <h5 className="text-neutral-200 text-xl font-medium leading-loose">{item.title}</h5>
-                    <p className="text-neutral-500 text-base font-normal leading-relaxed">{item.description}</p>
+                    <h5 className="text-2xl font-bold text-emerald-300 mb-3">{item.title}</h5>
+                    <p className="text-gray-200 text-base leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}

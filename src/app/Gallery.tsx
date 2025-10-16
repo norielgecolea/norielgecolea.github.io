@@ -281,10 +281,10 @@ export default function Gallery() {
       </div>
 
       {/* Dim gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       <FadeInSection>
         {/* Content (same as before) */}
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className=" flex flex-col justify-center relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 items-center">
           <div className="pb-16 text-center">
             <h2 className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em] text-emerald-200 animate-pulse drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3">
               MY CERTIFICATES
@@ -294,24 +294,25 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="relative">
+          <div className="align bg-center relative w-100 lg:w-300 sm:w-200  ">
+            <button
+              onClick={() => scroll("right")}
+              className="hover:bg-emerald-300 hover:text-emerald-900 bg-emerald-600 transition duration-200 ease-in-out absolute    right-0 top-1/2  translate-y-50 sm:-translate-y-1/2 z-20 w-11 h-11 p-3 shadow-md rounded-lg flex items-center justify-center"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
             <button
               onClick={() => scroll("left")}
-              className="hover:bg-emerald-300 hover:text-emerald-900 bg-emerald-600 transition duration-200 ease-in-out absolute left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 p-3 shadow-md rounded-lg flex items-center justify-center"
+              className="hover:bg-emerald-300 hover:text-emerald-900 bg-emerald-600 transition duration-200 ease-in-out absolute   left-0  top-1/2 translate-y-50 sm:-translate-y-1/2 z-20 w-11 h-11 p-3 shadow-md rounded-lg flex items-center justify-center"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
 
-            <button
-              onClick={() => scroll("right")}
-              className="hover:bg-emerald-300 hover:text-emerald-900 bg-emerald-600 transition duration-200 ease-in-out absolute right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 p-3 shadow-md rounded-lg flex items-center justify-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+
 
             <div ref={scrollRef} className="overflow-x-auto flex gap-6 snap-x snap-mandatory scroll-smooth scrollbar-hide relative z-10">
               {galleryItems.map((item, index) => (

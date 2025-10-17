@@ -293,7 +293,7 @@ export default function Gallery() {
              MY CERTIFICATES
             </h1>
             <p className="text-gray-200 text-base leading-relaxed">
-              Explore the essence of beauty in our gallery's intimate space.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, exercitationem ducimus. Provident unde illo hic harum porro mollitia ab facilis!
             </p>
           </div>
 

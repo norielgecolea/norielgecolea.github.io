@@ -9,7 +9,7 @@ import ProjectShowcase from "./projectshowcase";
 import Gallery from "./Gallery";
 import { motion, AnimatePresence } from "framer-motion";
 
-
+import TechnologiesSlider from "./TechnologiesSlider";
 
 
 
@@ -209,7 +209,11 @@ export default function Home() {
         </section>
 
 
-        <section className=" relative w-screen px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900  mt-15 gap-10 flex flex-col text-center justify-center items-center">
+        
+        <section className=" relative w-screen px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900   gap-10 flex flex-col text-center justify-center items-center">
+           <TechnologiesSlider />
+          
+          
           <FadeInSection>
             <h1
               className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]

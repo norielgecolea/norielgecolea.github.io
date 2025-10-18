@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-
+import FadeInSection from "./fadeinsection";
 
 export interface Project {
     title: string;
@@ -46,43 +46,51 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
             {/* Main Content */}
-            <div className="relative z-10 flex flex-col items-center gap-6 text-center  max-w-xl px-6">
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={current.title}
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -40 }}
-                        transition={{ duration: 0.6, ease: "easeInOut" }}
-                        className="flex flex-col items-center gap-6"
-                    >
-                        {/* Image Preview (clickable) */}
-                        <Link
-                            href={current.link || "#"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="relative w-full max-w-[500px] aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group"
-                        >
-                            <Image
-                                src={current.image}
-                                alt={current.title}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                priority
-                            />
-                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </Link>
 
-                        {/* Title + Description */}
-                        <div>
-                            <h2 className="text-3xl font-bold text-emerald-300 mb-3">
-                                {current.title}
-                            </h2>
-                            <p className="text-gray-200 text-base leading-relaxed">
-                                {current.description}
-                            </p>
-                        </div>
-                    </motion.div>
+            <div className="relative z-10 flex flex-col items-center gap-6 text-center  max-w-xl px-6">
+
+                <AnimatePresence mode="wait">
+                    <FadeInSection>
+                        <motion.div
+                            key={current.title}
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -40 }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                            className="flex flex-col items-center gap-6"
+                        >
+                            {/* Image Preview (clickable) */}
+
+                            <Link
+                                href={current.link || "#"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative w-full max-w-[500px] aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group"
+                            >
+
+                                <Image
+                                    src={current.image}
+                                    alt={current.title}
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    priority
+                                />
+
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </Link>
+
+                            {/* Title + Description */}
+                            <div>
+                                <h2 className="text-3xl font-bold text-emerald-300 mb-3">
+                                    {current.title}
+                                </h2>
+                                <p className="text-gray-200 text-base leading-relaxed">
+                                    {current.description}
+                                </p>
+                            </div>
+
+                        </motion.div>
+                    </FadeInSection>
                 </AnimatePresence>
 
                 {/* Controls */}
@@ -148,7 +156,8 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
 
 
 
-        </section>
+
+        </section >
 
     );
 }

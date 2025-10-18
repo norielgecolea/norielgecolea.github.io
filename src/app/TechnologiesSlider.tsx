@@ -62,7 +62,7 @@ export default function TechnologiesSlider() {
   return (
     <div className="absolute w-full py-8 space-y-8 select-none">
       {/* Row 1 - Left to Right */}
-      <InfiniteRow items={technologies} direction="left" duration={40} />
+      <InfiniteRow items={technologies} direction="left" duration={35} />
       {/* Row 2 - Right to Left */}
       <InfiniteRow
         items={[...technologies].reverse()}

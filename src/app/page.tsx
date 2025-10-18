@@ -11,7 +11,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import TechnologiesSlider from "./TechnologiesSlider";
 
-
+import Footer from "./Footer";
+import ContactSection from "./ContactSection";
 
 
 /**
@@ -202,22 +203,22 @@ export default function Home() {
 
 
 
-        <section className="bg-neutral-900">
-          <FadeInSection>
-            <ProjectShowcase projects={projects} />
-          </FadeInSection>
+        <section className="bg-neutral-950 mt-15">
+
+          <ProjectShowcase projects={projects} />
+
         </section>
 
 
-        
-        <section className=" relative w-screen px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900   gap-10 flex flex-col text-center justify-center items-center">
-           <TechnologiesSlider />
-          
-          
+
+        <section className=" relative w-screen  px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900   gap-10 flex flex-col text-center justify-center items-center">
+          <TechnologiesSlider />
+
+
           <FadeInSection>
             <h1
               className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
-  text-emerald-200 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3 animate-glow"
+  text-emerald-200 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3 animate-glow mt-10 "
             >
               Technologies
             </h1>
@@ -367,9 +368,15 @@ export default function Home() {
         </section>
 
 
-        <section className="absolute w-screen px-10  pb-32 sm:px-6 backdrop-blur-md  bg-neutral-900/30 gap-10 flex flex-col text-center justify-center items-center">
+        <section className="  relative w-screen px-10  sm:px-6 backdrop-blur-md  bg-neutral-900/30 gap-10 flex flex-col text-center justify-center items-center">
           <Gallery />
 
+        </section>
+
+        <section className="    min-w-screen  px-10 sm:py-25 py-10 sm:px-6 lg:px-8 backdrop-blur-lg bg-amber-80/2 rounded-3xl">
+          
+          <ContactSection />
+          
         </section>
 
 
@@ -383,10 +390,7 @@ export default function Home() {
       </main >
 
 
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
 
-
-      </footer>
     </div >
 
   );

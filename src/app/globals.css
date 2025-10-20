@@ -32,8 +32,8 @@ body {
 
 body {
   margin: 0;
-  
-background: linear-gradient(-45deg, #050505, #0b1e1a, #102820, #00cc66);
+
+  background: linear-gradient(-45deg, #050505, #0b1e1a, #102820, #00cc66);
 
 
   background-size: 400% 400%;
@@ -45,9 +45,11 @@ background: linear-gradient(-45deg, #050505, #0b1e1a, #102820, #00cc66);
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -58,13 +60,19 @@ background: linear-gradient(-45deg, #050505, #0b1e1a, #102820, #00cc66);
 
 
 @keyframes shake1 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(0);
   }
-  20%, 60% {
+
+  20%,
+  60% {
     transform: translateX(-4px);
   }
-  40%, 80% {
+
+  40%,
+  80% {
     transform: translateX(4px);
   }
 }
@@ -347,3 +355,7 @@ background: linear-gradient(-45deg, #050505, #0b1e1a, #102820, #00cc66);
 .animate-glow {
   animation: glow 2.5s ease-in-out infinite;
 }
+
+
+
+

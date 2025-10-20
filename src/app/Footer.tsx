@@ -22,7 +22,7 @@ export default function Footer() {
 
             <div className="mt-4 flex items-center gap-3">
               <a
-                href="mailto:hello@norielgecolea.com"
+                href="mailto:norielgecolea23@gmail.com"
                 className="text-sm inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/5 hover:bg-green-500/10 transition-all duration-300 ring-offset-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                 aria-label="Email Noriel"
               >
@@ -48,7 +48,7 @@ export default function Footer() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                hello@norielgecolea.com
+                norielgecolea23@gmail.com
               </a>
             </div>
           </div>

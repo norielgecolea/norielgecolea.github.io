@@ -137,7 +137,7 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       bg-gradient-to-r from-white via-emerald-100 to-cyan-200
       animate-text-shimmer
       group-hover:animate-text-shimmer-fast text-cyan-900 font-mono
-    ">
+     ">
                         View All Projects
                     </span>
 

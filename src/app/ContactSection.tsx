@@ -100,9 +100,10 @@ export default function ContactSection() {
                     <div className="flex justify-center">
                         <button
                             type="submit"
-                            className="px-8 py-3 rounded-lg bg-green-500/20 border border-green-500 text-green-400 font-medium hover:bg-green-500/30 hover:text-green-300 transition-all duration-300 shadow-[0_0_10px_rgba(34,197,94,0.3)]"
+                            className="submitbut px-8 py-3 rounded-lg bg-green-500/20 border border-green-500 text-green-400 font-medium hover:bg-green-500/30 hover:text-green-300 transition-all duration-300 shadow-[0_0_10px_rgba(34,197,94,0.3)]"
                         >
                             Send Message
+                            
                         </button>
                     </div>
                 </form>

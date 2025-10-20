@@ -286,11 +286,11 @@ export default function Gallery() {
         {/* Content (same as before) */}
         <div className=" flex flex-col justify-center relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 items-center">
           <div className="pb-16 text-center">
-<h1
-  className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
-  text-emerald-200 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3 animate-glow"
->
-             MY CERTIFICATES
+            <h1
+              className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
+  text-green-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3 animate-glow"
+            >
+              MY CERTIFICATES
             </h1>
             <p className="text-gray-200 text-base leading-relaxed">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, exercitationem ducimus. Provident unde illo hic harum porro mollitia ab facilis!

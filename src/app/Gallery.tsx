@@ -230,7 +230,7 @@ export default function Gallery() {
 
   // ---------------- JSX ----------------
   return (
-    <section className="relative flex items-center justify-center w-screen h-screen overflow-hidden bg-black text-white">
+    <section className="no-select relative flex items-center justify-center w-screen h-screen overflow-hidden bg-black text-white">
 
       {/* Background crossfade */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -292,8 +292,8 @@ export default function Gallery() {
             >
               MY CERTIFICATES
             </h1>
-            <p className="text-gray-200 text-base leading-relaxed">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, exercitationem ducimus. Provident unde illo hic harum porro mollitia ab facilis!
+            <p className=" text-gray-200 text-xs  sm:text-base leading-relaxed ">
+              Throughout my learning journey, I’ve earned various certifications that showcase my continuous growth in technology and software development. These certificates represent my dedication to improving my technical skills, exploring new tools, and staying up to date with industry standards.
             </p>
           </div>
 

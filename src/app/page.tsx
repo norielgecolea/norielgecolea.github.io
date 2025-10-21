@@ -29,7 +29,8 @@ const projects = [
     description:
       "The LSPU Training Request Portal is a web-based platform that streamlines the process for schools to request access to LSPU Los Banos’ facilities for training sessions. Through the portal, users can easily submit requests, track their status, and manage their bookings. This intuitive system enhances efficiency and transparency, ensuring a smooth and organized process for all participating schools.",
     image: "/projects/LSPU.jpg",
-    link: "www.facebook.com",
+    link:"",
+    
   },
   {
     title: "Quick Track",

@@ -112,7 +112,7 @@ const handleDownload = () => {
       <img
         src="/background.jpg"
         alt="Background"
-        className="fixed inset-0 w-full h-full object-cover blur-xxxs -z-10"
+        className=" fixed inset-0 w-full h-full object-cover blur-xxxs -z-10"
       />
 
 

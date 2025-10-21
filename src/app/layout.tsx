@@ -19,7 +19,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Noriel Gecolea's Digital Portfolio",
   description: "See my works.",
-
+  openGraph: {
+    title: "Noriel Gecolea's Digital Portfolio",
+    description: "See my works.",
+    url: "https://www.norielgecolea.com",
+    siteName: "Noriel Gecolea Portfolio",
+    images: [
+      {
+        url: "https://www.norielgecolea.com/meformal.png", // replace with your desired preview image
+        width: 1200,
+        height: 630,
+        alt: "Preview image of Noriel Gecolea Portfolio",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout(

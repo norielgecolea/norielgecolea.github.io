@@ -23,7 +23,7 @@ export default function VerticalCard({ image, title, body, tags = [] }: Vertical
         />
 
         <div className="px-6 py-4">
-          <h2 className="font-bold text-xl mb-2">{title}</h2>
+          <h2 className="text-gray-100 font-bold text-xl mb-2">{title}</h2>
           <p className="text-gray-400 text-base font-mono">{body}</p>
         </div>
 

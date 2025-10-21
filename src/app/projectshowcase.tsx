@@ -60,10 +60,10 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                             className="flex flex-col items-center gap-6"
                         >
                             {/* Image Preview (clickable) */}
-{/* Remove onclick to enable link */}
+                            {/* Remove onclick to enable link */}
                             <Link
                                 href={current.link || "#"}
-                                onClick={(e) => e.preventDefault()} 
+                                onClick={(e) => e.preventDefault()}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="relative w-full max-w-[500px] aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group"

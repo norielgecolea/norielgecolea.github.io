@@ -8,13 +8,13 @@ const testimonials = [
         name: "Timotie John Punzalan",
         role: "LSPU Los Baños Information Technology Student",
         image: "/tim.jpg",
-        quote: "This service is amazing! It has completely transformed my business.",
+        quote: "Noriel Gecolea made our LSPU Training Request Portal incredibly easy to access and navigate, ensuring everything was clear. He communicates efficiently, works diligently to make sure everything runs smoothly.",
     },
     {
         name: "Ivan Pelegrina",
         role: "Computer Science Graduate",
         image: "/ivan.jpg",
-        quote: "I love the simplicity and efficiency of this platform. I love the simplicity and efficiency of this platform.I love the simplicity and efficiency of this platform.",
+        quote: "I love how seamless and intuitive the spam detection system is. The front-end is clean, responsive, and easy to use—great work by Noriel!",
     },
 
 ];
@@ -60,7 +60,7 @@ export default function TestimonialSlider() {
     return (
 
         <div
-            className="relative py-5 w-full "
+            className="relative py-5 w-full h-full flex flex-col justify-center items-center "
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
         >

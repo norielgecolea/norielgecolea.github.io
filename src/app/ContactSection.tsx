@@ -1,24 +1,45 @@
 "use client";
 
 import { useState } from "react";
+import Alert from "./alert";
 
 export default function ContactSection() {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [alert, setAlert] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", form);
-        alert("Message sent! Thank you for reaching out ✨");
-        setForm({ name: "", email: "", message: "" });
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    access_key: "1fc4e8af-b7fb-4bd9-95c6-5bac74d5e7b0",
+                    ...form,
+                }),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                setAlert({ message: "Message sent! Thank you for reaching out ✨", type: "success" });
+                setForm({ name: "", email: "", message: "" });
+            } else {
+                setAlert({ message: "Something went wrong. Please try again.", type: "error" });
+            }
+        } catch {
+            setAlert({ message: "Failed to send message. Please check your connection.", type: "error" });
+        }
     };
 
     return (
         <section
-            id="contact"
+
             className="relative py-5"
         >
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-green-500/60 to-transparent"></div>
@@ -34,8 +55,11 @@ export default function ContactSection() {
 
                 <form
                     onSubmit={handleSubmit}
+
                     className="max-w-2xl mx-auto text-left bg-white/5 p-8 rounded-2xl shadow-lg border border-green-700/30"
                 >
+
+
                     {/* Name */}
                     <div className="mb-6">
                         <label
@@ -103,11 +127,11 @@ export default function ContactSection() {
                             className="submitbut px-8 py-3 rounded-lg bg-green-500/20 border border-green-500 text-green-400 font-medium hover:bg-green-500/30 hover:text-green-300 transition-all duration-300 shadow-[0_0_10px_rgba(34,197,94,0.3)]"
                         >
                             Send Message
-                            
+
                         </button>
                     </div>
                 </form>
-
+                {alert && <Alert message={alert.message} type={alert.type} />}
                 {/* Decorative Glow */}
                 <div className="absolute inset-x-0 -bottom-5 h-px bg-gradient-to-r from-transparent via-green-500/60 to-transparent"></div>
             </div>

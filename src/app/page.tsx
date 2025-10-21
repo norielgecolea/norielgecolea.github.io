@@ -47,8 +47,32 @@ const projects = [
 
 
 export default function Home() {
+  const [countdown, setCountdown] = useState<number | null>(null);
+  const [downloading, setDownloading] = useState(false);
+const handleDownload = () => {
+      if (downloading) return; // Prevent multiple clicks
+      setDownloading(true);
+      setCountdown(3);
 
+      // Start countdown
+      const interval = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev && prev > 1) return prev - 1;
+          clearInterval(interval);
 
+          // Trigger the download after countdown
+          const link = document.createElement("a");
+          link.href = "/Noriel Gecolea Resume.pdf";
+          link.download = "Noriel Gecolea Resume.pdf";
+          link.click();
+
+          setDownloading(false);
+          setCountdown(null);
+          return null;
+        });
+        return 0;
+      }, 1000);
+    };
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       if (e.ctrlKey) e.preventDefault();
@@ -58,6 +82,26 @@ export default function Home() {
     return () => document.removeEventListener("wheel", handleWheel);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const yOffset = -80; // Adjust based on navbar height
+    const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+
+    // Close the mobile menu first, then scroll smoothly
+
+    setTimeout(() => {
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 250);
+
+
+
+
+
+
+    
+  };
   return (
 
 
@@ -139,11 +183,19 @@ export default function Home() {
 
 
 
-                  <button className="active:scale-95 bg-emerald-600 transition duration-100 ease-in-out inline-flex items-center rounded-lg hover:bg-emerald-300 hover:text-emerald-900 px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm   ">
-                    Download my Resume
+                  <button
+                    onClick={handleDownload}
+                    disabled={downloading}
+                    className={`active:scale-95 transition duration-100 ease-in-out inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium shadow-sm 
+      ${downloading
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-emerald-600 hover:bg-emerald-300 hover:text-emerald-900 text-primary-foreground"
+                      }`}
+                  >
+                    {countdown ? `Downloading in ${countdown}...` : "Download my Resume"}
                   </button>
 
-                  <button className="hover:bg-amber-50/10 duration-100 ease-in-out inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                  <button onClick={() => scrollToSection('contact')} className="active:scale-95 hover:bg-amber-50/10 duration-100 ease-in-out inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground "
                   >
                     Contact Me
                   </button>
@@ -204,7 +256,7 @@ export default function Home() {
 
 
 
-        <section className="bg-neutral-950 mt-15">
+        <section id="projects" className="bg-neutral-950 mt-15 scroll-mt-24">
 
           <ProjectShowcase projects={projects} />
 
@@ -344,25 +396,20 @@ export default function Home() {
 
 
 
-        <section className="  relative w-screen px-10  sm:px-6 backdrop-blur-md  bg-neutral-900/30 gap-10 flex flex-col text-center justify-center items-center">
+        <section id="skills" className="  relative w-screen px-10  sm:px-6 backdrop-blur-md  bg-neutral-900/30 gap-10 flex flex-col text-center justify-center items-center">
           <Gallery />
 
         </section>
 
-
-
-        <section className="relative w-screen  px-10 py-10 pb-32 sm:px-6 backdrop-blur-xl bg-neutral-900   gap-10 flex flex-col text-center justify-center items-center">
-          
+        <section id="testimonial" className="relative w-screen h-screen flex justify-center items-center overflow-hidden bg-neutral-900 backdrop-blur-xl">
           <TestimonialSlider />
-
-
-
-
-
         </section>
 
 
-        <section className="    min-w-screen  px-10 sm:py-25 py-10 sm:px-6 lg:px-8 backdrop-blur-lg bg-amber-80/2 rounded-3xl">
+
+
+
+        <section id="contact" className=" scroll-mt-24   min-w-screen  px-10 sm:py-25 py-10 sm:px-6 lg:px-8 backdrop-blur-lg bg-amber-80/2 rounded-3xl">
 
           <ContactSection />
 

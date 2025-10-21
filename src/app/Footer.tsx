@@ -1,7 +1,35 @@
 // components/Footer.tsx
+"use client"
 import Link from "next/link";
+import Alert from "./alert";
+import { useState,useEffect } from "react";
 
 export default function Footer() {
+  const [showAlert, setShowAlert] = useState(false);
+
+    useEffect(() => {
+    if (showAlert) {
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 3000); // 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [showAlert]);
+
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id);
+        if (!section) return;
+
+        const yOffset = -80; // Adjust based on navbar height
+        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        // Close the mobile menu first, then scroll smoothly
+       
+        setTimeout(() => {
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }, 250);
+    };
+  
   const year = new Date().getFullYear();
   return (
     <footer className="bg-neutral-700 backdrop-blur-3xl  border-t border-neutral-900 text-gray-300">
@@ -15,9 +43,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-gray-400 max-w-md">
-              Software developer &amp; problem-solver. I build clean, performant web apps with
-              attention to UX and detail. Currently exploring real-time vision systems and
-              modern frontend workflows.
+I’m a software developer who loves turning ideas into fast, elegant, and user-friendly web experiences. Passionate about solving problems through code, I’m currently diving into real-time vision systems and cutting-edge frontend development.
             </p>
 
             <div className="mt-4 flex items-center gap-3">
@@ -59,17 +85,17 @@ export default function Footer() {
               <h4 className="text-sm font-medium text-green-400">Explore</h4>
               <ul className="mt-3 space-y-2 text-sm">
                 <li><Link href="/" className="hover:text-green-400 transition-colors">Home</Link></li>
-                <li><Link href="/projects" className="hover:text-green-400 transition-colors">Projects</Link></li>
-                <li><Link href="/blog" className="hover:text-green-400 transition-colors">Blog</Link></li>
+                <li><button onClick={() => scrollToSection('projects')} className="hover:text-green-400 transition-colors">Projects</button></li>
+                <li><button onClick={() => scrollToSection('testimonial')} className="hover:text-green-400 transition-colors">Testimonials</button></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-sm font-medium text-green-400">Services</h4>
               <ul className="mt-3 space-y-2 text-sm">
-                <li><Link href="/services/consulting" className="hover:text-green-400 transition-colors">Consulting</Link></li>
-                <li><Link href="/services/dev" className="hover:text-green-400 transition-colors">Web / App Dev</Link></li>
-                <li><Link href="/contact" className="hover:text-green-400 transition-colors">Contact</Link></li>
+                <li><button onClick={() => setShowAlert(true)} className="hover:text-green-400 transition-colors">Consulting</button></li>
+                <li><button onClick={() => setShowAlert(true)} className="hover:text-green-400 transition-colors">Web / App Dev</button></li>
+                <li><button onClick={() => scrollToSection('contact')} className="hover:text-green-400 transition-colors">Contact</button></li>
               </ul>
             </div>
 
@@ -108,21 +134,7 @@ export default function Footer() {
                   </svg>
                 </a>
 
-                {/* Twitter / X */}
-                <a
-                  href="https://twitter.com/norielgecolea"
-                  aria-label="Twitter"
-                  className="group p-2 rounded-md bg-white/5 hover:bg-green-500/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400"
-                >
-                  <svg
-                    className="w-5 h-5 transition-transform group-hover:-translate-y-0.5"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden
-                  >
-                    <path d="M23 4.5c-.7.3-1.4.5-2.1.6.8-.5 1.3-1.3 1.6-2.2-.7.4-1.5.7-2.3.9C19.6 3 18.2 2.5 16.8 2.5c-2.6 0-4.6 2.4-3.8 4.9C9.6 7 6.6 5.5 4.6 3.1 3 5.2 4.1 8 6.6 9 6 9 5.4 8.8 4.9 8.5c0 2.4 1.7 4.5 4 5-.4.1-.8.2-1.2.2-.3 0-.6 0-.9-.1.6 2 2.6 3.5 4.9 3.5-2 1.6-4.5 2.5-7.2 2.5-.5 0-1 0-1.5-.1 2.8 1.8 6.1 2.9 9.6 2.9 11.5 0 17.8-9.6 17.8-17.9v-.8C22.1 6 22.6 5.2 23 4.5z" />
-                  </svg>
-                </a>
+                
               </div>
             </div>
           </div>
@@ -136,13 +148,20 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-sm hover:text-green-400 transition-colors">Privacy</Link>
-            <Link href="/terms" className="text-sm hover:text-green-400 transition-colors">Terms</Link>
+            <button onClick={() => setShowAlert(true)} className="text-sm hover:text-green-400 transition-colors">Privacy</button>
+            
+            
+            <button onClick={() => setShowAlert(true)} className="text-sm hover:text-green-400 transition-colors">Terms</button>
+            
             <a
               href="/#top"
               className="text-sm inline-flex items-center gap-2 hover:text-green-400 transition-colors"
               aria-label="Back to top"
             >
+            
+            
+            
+          
               Back to top
               <svg
                 className="w-4 h-4"
@@ -158,6 +177,10 @@ export default function Footer() {
                 <path d="M5 12l7-7 7 7" />
               </svg>
             </a>
+
+
+
+            {showAlert && <Alert message="This feature is Coming Soon! 😄" />}
           </div>
         </div>
       </div>

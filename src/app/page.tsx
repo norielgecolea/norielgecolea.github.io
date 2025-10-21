@@ -63,7 +63,7 @@ const handleDownload = () => {
 
           // Trigger the download after countdown
           const link = document.createElement("a");
-          link.href = "./NORIEL_GECOLEA_RESUME.pdf";
+          link.href = "/NORIEL_GECOLEA_RESUME.pdf";
           link.download = "Noriel Gecolea Resume.pdf";
           link.click();
 

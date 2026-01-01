@@ -269,7 +269,7 @@ const handleDownload = () => {
           <TechnologiesSlider />
 
 
-          <FadeInSection>
+         
             <h1
               className="text-4xl sm:text-6xl font-extrabold font-mono uppercase tracking-[0.25em]
   text-green-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)] mb-3 animate-glow mt-10 "
@@ -281,7 +281,7 @@ const handleDownload = () => {
 
 
 
-            <div className="container max-w-3xl text-sm ">
+            <div className="container z=0 max-w-3xl text-sm ">
               <div className="  p-5 items-center justify-center  bg-green-400/60 rounded-3xl  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 " >
 
                 <div className="hover-shake hover:bg-emerald-600 transition-all hover:scale-[1.02] duration-300 no-select container m-1 flex h-auto max-w-40 w-auto text-center items-center justify-center gap-1 bg-neutral-800 text-white p-2 rounded-lg">
@@ -369,7 +369,7 @@ const handleDownload = () => {
                   </svg>
 
 
-                  <h1 className="font-mono">PHP</h1>
+                  <h1 className="font-mono">Arduino</h1>
                 </div>
 
 
@@ -378,7 +378,7 @@ const handleDownload = () => {
 
             </div>
 
-          </FadeInSection>
+         
 
 
 

@@ -282,7 +282,7 @@ export default function Gallery() {
 
       {/* Dim gradient overlay */}
       <div className="inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <FadeInSection>
+    
         {/* Content (same as before) */}
         <div className=" flex flex-col justify-center relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 items-center">
           <div className="pb-16 text-center">
@@ -332,7 +332,7 @@ export default function Gallery() {
             </div>
           </div>
         </div>
-      </FadeInSection>
+    
     </section >
   );
 }

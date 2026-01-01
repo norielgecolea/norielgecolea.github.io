@@ -50,7 +50,7 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             <div className="relative z-10 flex flex-col items-center gap-6 text-center  max-w-xl px-6">
 
                 <AnimatePresence mode="wait">
-                    <FadeInSection>
+                    
                         <motion.div
                             key={current.title}
                             initial={{ opacity: 0, y: 40 }}
@@ -91,7 +91,7 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                             </div>
 
                         </motion.div>
-                    </FadeInSection>
+                    
                 </AnimatePresence>
 
                 {/* Controls */}
